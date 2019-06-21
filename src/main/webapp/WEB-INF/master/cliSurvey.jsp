@@ -31,13 +31,12 @@
 	  </head>
 	
 	  <body>
-	
-	    <div class="container">
+	    <div class="container" style=" padding-left: 40px; padding-right: 40px;">
 	      <div class="header">
 	        <nav>
 	          <ul class="nav nav-pills pull-right">
-	            <li role="presentation"><a href="/master/edit">Edit</a></li>
-	            <li role="presentation" class="active"><a href="/master/cli">Survey</a></li>
+	            <li role="presentation" style="margin-top: 20px;margin-bottom:20px;"><a href="/master/edit">Edit</a></li>
+	            <li role="presentation" style="margin-top: 20px;margin-bottom:20px;" class="active"><a href="/master/cli">Survey</a></li>
 	          </ul>
 	        </nav>
 		    <h4 class="text-muted">
@@ -57,11 +56,14 @@
 	      </div> -->
 	
 	      <div class="row marketing">
-	        <div class="col-lg-6">
-	        	<div class = "jumbotron" style = "text-align:center; display: table;">
-		          <label for="name_input" 
-		          		 style = "padding: 10px 10px;margin-right:10px;font-size:20px;text-align: center;">증권사 명</label>
-		          <input type="text" id="name_input"style = "width: 250px;height:38px;">
+	        <div class="col-lg">
+	        	<div class = "jumbotron" style = "text-align:center; display: table;width: 100%;">
+		          <!-- <p><input type="text" readonly value = "코스콤 2019 고객만족도 조사." /></p> -->
+		 			 <h2 style="margin-top: 0px; margin-bottom: 4%;color: inherit;">${value1}</h2>
+		          <!-- label for="name_input" 
+		          		 style = "font-size:20px;text-align:left;">증권사 명</label> -->
+		         <p><!-- 증권사&nbsp;&nbsp;&nbsp; --><input type="text" id="name_input" placeholder="회사명" style = "width: 250px;height:38px;font-size:1.5rem;"></p>
+		         <p><!-- 담당자&nbsp;&nbsp;&nbsp; --><input type="text" id="name_input" placeholder="담당자" style = "width: 250px;height:38px;font-size:1.5rem;"></p>
 				</div>
 				<h4>문의요청시 응대가 빨랐나요?</h4>
 	          	<table class="table" style="margin-bottom: 35px;">
@@ -168,7 +170,7 @@
 	          	</table>
 	          	
 	          <h4>하고싶은 말이 있나요?</h4>
-	          <p><textarea class="well" type="text" style = "width: 400px; height:100px;"></textarea>
+	          <p><textarea class="form-control" type="text" style = "width: 90%; height:100px;"></textarea>
 	      </div>
 		</div>
 	    <div style = "text-align: center; padding-top: 10px;margin-bottom: 5%;">
