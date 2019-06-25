@@ -1,18 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="survey.mapper.CateEditDao">
  
-<mapper namespace="cateEdit">
- 
- 	<select id="getCateList" resultType="com.survey.model.cateVO">
+ 	<select id="getCateList" resultType="survey.model.cateVO">
  		<![CDATA[
-        	SELECT cate_no,cate_name,cate_info 
-        	FROM CATE 
-        	ORDER BY CATE_NO DESC 
+        	SELECT 
+        		cate_no,
+        		cate_name,
+        		cate_info 
+        	FROM 
+        		cate 
+        	ORDER BY cate_no DESC 
         ]]>
     </select>
  
-    <insert id="addCate" parameterType="com.survey.model.cateVO">
+    <insert id="addCate" parameterType="survey.model.cateVO">
     	<![CDATA[
         	INSERT INTO 
         		CATE(CATE_NO,CATE_NAME,CATE_INFO) 

@@ -15,7 +15,10 @@ public class CateEditDao {
 	 
 	 public List<cateVO> getCateList(){
 		 //return surveyMapper.getCateList();
-	 return sqlSession.selectList("cateEdit.getCateList");
+		System.out.println("카테 다오");
+		List<cateVO> cateList = sqlSession.selectList("getCateList");
+		System.out.println(cateList);
+		return cateList;
 	 }
 	
 

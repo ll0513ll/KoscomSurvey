@@ -8,6 +8,9 @@ apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 
+compile group: 'javax.servlet', name: 'jstl', version: '1.2'
+compile group: 'org.apache.tomcat.embed', name: 'tomcat-embed-jasper', version: '9.0.0.M21'
+
 group = 'com.survey'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'

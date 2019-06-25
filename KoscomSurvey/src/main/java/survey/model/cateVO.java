@@ -1,6 +1,8 @@
 package survey.model;
 
+import org.apache.ibatis.type.Alias;
 
+@Alias("cateVO")
 public class cateVO {
 
 	private int cate_no;
@@ -11,8 +13,6 @@ public class cateVO {
 	public cateVO() {
 
 	}
-
-	
 
 	public cateVO(int cate_no, String cate_name, String cate_info) {
 		this.cate_no = cate_no;

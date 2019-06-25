@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import survey.mapper.CateEditDao;
-import survey.mapper.SurveyMapper;
 import survey.model.cateVO;
 
 @Service
@@ -20,8 +19,7 @@ public class CateEditService {
 		
 		System.out.println("카테서비스");
 		List<cateVO> cateList = cateEditDao.getCateList();
-//		 return cateList;
-		return null;
+		 return cateList;
 	}
 	
 	/*public int addCate(cateVO cateVO) throws Exception{
