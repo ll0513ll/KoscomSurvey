@@ -78,7 +78,7 @@
 		          </ul>
 	         </div>
 		
-		      <div class="jumbotron">
+		      <div class="jumbotron" id="mainBox">
 		      	<%-- <h2 style="color: #646464;">${cateVo.cateName}</h2> --%>
 		      	<!-- <p></p> -->
 		        <h3 style="font-weight: normal;" id="titel">질문 제목</h3>
@@ -88,7 +88,7 @@
 	  				<p></p>
 		        <div id = "addBtnDiv" style = "text-align: center; padding-top: 10px;"><a class="btn btn-warning" id="addBtn" role="button">추가하기</a></div>
 		      </div>
-			 <%-- <form method="post" class="quesList-form" action="${pageContext.request.contextPath}/survey/"> --%>
+			 <form method="post" class="quesList-form" action="${pageContext.request.contextPath}/survey/">
 		      <div class="row marketing">
 		      	<div class = "selectCate" style="margin-bottom: 3%;" >
 		      		<label for="cate" style="font-size:1.5em;">카테고리 선택</label>
@@ -127,7 +127,8 @@
 		      </div>
 	          <div class = "buttonBox" style="margin-left: 40%;margin-top:10%;margin-bottom: 5%;">
 				  
-				  	<button type="button" class="btn btn-warning" id="editBtn">수정하기</button>
+				  	<button type="submit" class="btn btn-warning">생성하기</button>
+				  	<button type="button" class="btn btn-default" id="editBtn">수정</button>
 				  	<button type="button" id = "ques_del" class="btn btn-default" style="margin-left: 10px;">삭제</button>
 				  
 			  </div>
@@ -280,11 +281,12 @@
     	  var choiceCate = $("input[class=Qchoice]:checked").parent().text();
     	  console.log(choiceCate);
     	  
-    	  $("#titel").text("수정하기");
+    	  $("#titel").text("수정 질문");
     	  $("#Qtitle").val(choiceCate);
+    	  $("#addBtn").text("수정 하기")
     	  
-    	  document.getElementByClass("jumbotron").scrollIntoView();
-    	  
+    	  //document.getElementById("mainBox").scrollIntoView();
+    	  $('html').scrollTop(0);
     	  
       });
 	  	</script>
