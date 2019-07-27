@@ -79,16 +79,16 @@
 	         </div>
 		
 		      <div class="jumbotron">
-		      	<h2 style="color: #646464;">${cateVo.cateName}</h2>
-		      	<p></p>
-		        <h3 style="font-weight: normal;">질문 제목</h3>
+		      	<%-- <h2 style="color: #646464;">${cateVo.cateName}</h2> --%>
+		      	<!-- <p></p> -->
+		        <h3 style="font-weight: normal;" id="titel">질문 제목</h3>
 		        	<p><input type="text" id="Qtitle" name="Qtitle" style = "width: 600px;" value=""></p>
 		        	<input type="radio" name="Qtype" checked="checked" value="1"style="font-size:8px !important;"/> 객관식 &nbsp;&nbsp;&nbsp; 
 	  				<input type="radio" name="Qtype" value="2" style="font-size:8px !important;" /> 주관식
 	  				<p></p>
 		        <div id = "addBtnDiv" style = "text-align: center; padding-top: 10px;"><a class="btn btn-warning" id="addBtn" role="button">추가하기</a></div>
 		      </div>
-			 <form method="post" class="quesList-form" action="${pageContext.request.contextPath}/survey/">
+			 <%-- <form method="post" class="quesList-form" action="${pageContext.request.contextPath}/survey/"> --%>
 		      <div class="row marketing">
 		      	<div class = "selectCate" style="margin-bottom: 3%;" >
 		      		<label for="cate" style="font-size:1.5em;">카테고리 선택</label>
@@ -104,7 +104,10 @@
 		          <div  id = "quesList2">
 				          <c:forEach var = "vo" items = "${quesList}"  varStatus="status">
 				      		<c:if test="${vo.type eq 2 }">
-							          <p><input class = "Qchoice" name = "quesName[]" value="${vo.quesNo}" type="checkbox">&nbsp;&nbsp;&nbsp;${vo.quesName}</p>
+							          <p>
+							          	<input class = "Qchoice" name = "quesName[]" value="${vo.quesNo}" type="checkbox">
+							          	&nbsp;&nbsp;&nbsp;${vo.quesName}
+							          </p>
 									 
 							</c:if> 
 			        	 </c:forEach>
@@ -124,7 +127,7 @@
 		      </div>
 	          <div class = "buttonBox" style="margin-left: 40%;margin-top:10%;margin-bottom: 5%;">
 				  
-				  	<button type="submit" class="btn btn-warning">생성하기</button>
+				  	<button type="button" class="btn btn-warning" id="editBtn">수정하기</button>
 				  	<button type="button" id = "ques_del" class="btn btn-default" style="margin-left: 10px;">삭제</button>
 				  
 			  </div>
@@ -271,7 +274,19 @@
           })
     	  
       }
+	
+      $("#editBtn").click(function() { 
 	  	
+    	  var choiceCate = $("input[class=Qchoice]:checked").parent().text();
+    	  console.log(choiceCate);
+    	  
+    	  $("#titel").text("수정하기");
+    	  $("#Qtitle").val(choiceCate);
+    	  
+    	  document.getElementByClass("jumbotron").scrollIntoView();
+    	  
+    	  
+      });
 	  	</script>
 	
 	</body>

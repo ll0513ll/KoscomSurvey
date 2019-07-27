@@ -29,16 +29,15 @@ public class QuesEditController {
 	CateEditService cateEditService;
 	
 	@RequestMapping(value="/", method= {RequestMethod.GET,RequestMethod.POST})
-	public String edit(@RequestParam("cateName") int cateName,Model model) throws Exception {
+	public String edit(Model model) throws Exception {
 		
 		System.out.println("질문편집 컨트롤러");
-		System.out.println(cateName);
 		
 		List<quesVO> quesList = quesService.getQuesList();
 		model.addAttribute("quesList", quesList);
 
-		cateVO cateVo = quesService.getCateName(cateName);
-		model.addAttribute("cateVo", cateVo);
+		//cateVO cateVo = quesService.getCateName(cateName);
+		//model.addAttribute("cateVo", cateVo);
 		
 		List<cateVO> cateList = cateEditService.getCateList();
 		model.addAttribute("cateList",cateList);
