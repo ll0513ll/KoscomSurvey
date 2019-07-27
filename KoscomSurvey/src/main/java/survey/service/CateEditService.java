@@ -1,5 +1,6 @@
 package survey.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,19 +23,19 @@ public class CateEditService {
 		 return cateList;
 	}
 	
-	/*public int addCate(cateVO cateVO) throws Exception{
+	public int addCate(cateVO cateVO) throws Exception{
 		
 		System.out.println("카테추가 서비스");
 		
-		return surveyMapper.addCate(cateVO);
+		return cateEditDao.addCate(cateVO);
 	}
 	
-	public int delCate(List<String> delCateList) throws Exception{
+	public int delCate(ArrayList<String> delCateList) throws Exception{
 		
 		System.out.println("카테삭제 서비스");
 		System.out.println(delCateList);
 		
-		return surveyMapper.delCate(delCateList);
-	}*/
+		return cateEditDao.delCate(delCateList);
+	}
 	
 }

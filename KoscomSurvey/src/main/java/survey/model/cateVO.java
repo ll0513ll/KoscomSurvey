@@ -1,57 +1,64 @@
 package survey.model;
 
-import org.apache.ibatis.type.Alias;
+import lombok.Getter;
+import lombok.Setter;
 
-@Alias("cateVO")
+@Getter
+@Setter
 public class cateVO {
 
-	private int cate_no;
-	private String cate_name;
-	private String cate_info;
+	private int cateNo;
+	private String cateName;
+	private String cateInfo;
 	
 
 	public cateVO() {
 
 	}
 
-	public cateVO(int cate_no, String cate_name, String cate_info) {
-		this.cate_no = cate_no;
-		this.cate_name = cate_name;
-		this.cate_info = cate_info;
+
+	public cateVO(int cateNo, String cateName, String cateInfo) {
+		this.cateNo = cateNo;
+		this.cateName = cateName;
+		this.cateInfo = cateInfo;
 	}
 
 
-
-	public int getCate_no() {
-		return cate_no;
+	public int getCateNo() {
+		return cateNo;
 	}
 
-	public void setCate_no(int cate_no) {
-		this.cate_no = cate_no;
+
+	public void setCateNo(int cateNo) {
+		this.cateNo = cateNo;
 	}
 
-	public String getCate_name() {
-		return cate_name;
+
+	public String getCateName() {
+		return cateName;
 	}
 
-	public void setCate_name(String cate_name) {
-		this.cate_name = cate_name;
+
+	public void setCateName(String cateName) {
+		this.cateName = cateName;
 	}
 
-	public String getCate_info() {
-		return cate_info;
+
+	public String getCateInfo() {
+		return cateInfo;
 	}
 
-	public void setCate_info(String cate_info) {
-		this.cate_info = cate_info;
+
+	public void setCateInfo(String cateInfo) {
+		this.cateInfo = cateInfo;
 	}
 
 
 	@Override
 	public String toString() {
-		return "cateVO [cate_no=" + cate_no + ", cate_name=" + cate_name + ", cate_info=" + cate_info + "]";
+		return "cateVO [cateNo=" + cateNo + ", cateName=" + cateName + ", cateInfo=" + cateInfo + "]";
 	}
-	
-	
+
+
 	
 }

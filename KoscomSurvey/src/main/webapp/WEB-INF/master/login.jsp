@@ -34,7 +34,7 @@
 
 	<div class="container">
 
-		<form class="form-signin" style="margin-top: 10%;" action='/master/login'>
+		<form class="form-signin" style="margin-top: 10%;" action='/quesEdit/quesList'>
 			<h2 class="form-signin-heading">관리자 로그인</h2>
 			<label for="inputEmail" class="sr-only">Email address</label> 
 			<input type="email" id="inputEmail" class="form-control"placeholder="Email address" required="" autofocus=""> 

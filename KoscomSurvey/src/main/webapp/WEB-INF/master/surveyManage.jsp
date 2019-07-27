@@ -187,8 +187,8 @@
 	      <div class="navbar navbar-inverse navbar-fixed-top" style="background-color: white;">
 	        <nav>
 	          <ul class="nav nav-pills pull-right" style=" margin-right: 330px;">
-	            <li role="presentation" class="active" style="margin-top: 20px;"><a href="/master/edit">Edit</a></li>
-	            <li role="presentation" style="margin-top: 20px;"><a href="/master/cli">Survey</a></li>
+	            <li role="presentation" class="active" style="margin-top: 20px;"><a href="/cateEdit/">Edit</a></li>
+	            <li role="presentation" style="margin-top: 20px;"><a href="/survey/">Survey</a></li>
 	          </ul>
 	        </nav>
 		    <h4 class="text-muted">
@@ -201,7 +201,7 @@
 		      <div class="col-sm-3 col-md-2 sidebar" style="margin-top:30px;">
 		          <ul class="nav nav-sidebar">
 		            <li><a href="/cateEdit/">카테고리 편집 <span class="sr-only">(current)</span></a></li>
-		            <li><a href="/master/edit">질문 편집</a></li>
+		            <li><a href="/quesEdit/quesList">질문 편집</a></li>
 		            <li class="active"><a href="/master/surveyManage">설문조사 관리</a></li>
 		          </ul>
 	         </div>

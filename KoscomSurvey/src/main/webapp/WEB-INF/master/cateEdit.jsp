@@ -23,17 +23,12 @@
 	    <!-- sidebar styles for this template -->
 	    <link href="/css/dashboard.css" rel="stylesheet">
 	
-	    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-	    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+	    
 	    <script src="/assets/js/ie-emulation-modes-warning.js"></script>
 	    <script src="/assets/js/jquery.min.js"></script>
 		<script src="/assets/js/widgets.js"></script>
 	    <script src="/bootstrap/js/bootstrap.min.js"></script>
-	    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-	    <!--[if lt IE 9]>
-	      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-	      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-	    <![endif]-->
+	    
 	  </head>
 	
 	  <body>
@@ -49,7 +44,7 @@
 		        	<input type="hidden" name="modalDel" value="">
 			        <h5 style="margin-top: 30px;">해당 카테고리를 삭제 할 경우 관련 설문이 모두 삭제됩니다.</h5><br>
 			        <h5>삭제 하시겠습니까?</h5>
-			        <div class = "buttonBox" style="margin-top:10%;margin-bottom: 5%;">
+			        <div class="buttonBox" style="margin-top:10%;margin-bottom: 5%;">
 					  
 					  	<button type="button" onclick= "delCate();" class="btn btn-warning">삭제</button>
 					  	<button type="button" data-dismiss="modal" aria-label="Close" class="btn btn-default" style="margin-left: 10px;">취소</button>
@@ -59,19 +54,13 @@
 		     </div>
 		    </div>
 		   </div>
-		   <!--alert -->
-		   <div>
-		   	<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-			  <span aria-hidden="true">&times;</span>
-			</button>
-		   </div>
 	
 	    <div class="container" style="margin-top:30px;">
 	      <div class="navbar navbar-inverse navbar-fixed-top" style="background-color: white;">
 	        <nav>
 	          <ul class="nav nav-pills pull-right" style=" margin-right: 330px;">
-	            <li role="presentation" class="active" style="margin-top: 20px;"><a href="/master/edit">Edit</a></li>
-	            <li role="presentation" style="margin-top: 20px;"><a href="/master/cli">Survey</a></li>
+	            <li role="presentation" class="active" style="margin-top: 20px;"><a href="/cateEdit/">Edit</a></li>
+	            <li role="presentation" style="margin-top: 20px;"><a href="/survey/">Survey</a></li>
 	          </ul>
 	        </nav>
 		    <h4 class="text-muted">
@@ -80,11 +69,12 @@
 		       	 설문조사 편집
 		    </h4>
 	      </div>
+
 	      <div class = "row">
 		      <div class="col-sm-3 col-md-2 sidebar" style="margin-top:30px;">
 		          <ul class="nav nav-sidebar">
 		            <li class="active"><a href="/cateEdit/">카테고리 편집 <span class="sr-only">(current)</span></a></li>
-		            <li><a href="/master/edit">질문 편집</a></li>
+		            <li><a href="/quesEdit/quesList">질문 편집</a></li>
 		            <li><a href="/master/surveyManage">설문조사 관리</a></li>
 		          </ul>
 	         </div>
@@ -93,19 +83,19 @@
 		        <h3 style="font-weight: normal;">카테고리 제목</h3>
 		        	<div class = "addCate">
 		        		<p >
-		        			<input type="text" id = "cate_name" name='addCateName' style = "width: 600px;" value="">
+		        			<input type="text" id = "cateName" name='addCateName' style = "width: 600px;" value="">
 		        		</p>
 		       		</div>
 		        <h4 style="font-weight: normal;">설명</h4>
 		        	<div class = "addCate">
 		        		<p>
-		        			<textarea class="form-control" id="cate_info" name='addCateInfo' type="text" style = "width: 600px; height:80px;" value=""></textarea>
+		        			<textarea class="form-control" id="cateInfo" name='addCateInfo' type="text" style = "width: 600px; height:80px;" value=""></textarea>
 	        			</p>
 	  				</div>
 	  				<p></p>
 		        <div id="addBtnDiv"style = "text-align: center; padding-top: 10px;"><button class="btn btn-warning" id="addBtn" role="button">추가하기</button></div>
 		      </div>
-		
+			<form method="post" class="cateList-form" action="${pageContext.request.contextPath}/quesEdit/">
 		      <div class="row marketing">
 		        <div  style = "text-align: left;"> 
 		          <table class = "table table-striped" id="cateListTable">
@@ -113,8 +103,8 @@
 		          		<tbody>
 		          			<c:forEach items = "${cateList}" var = "vo">
 					          <tr>
-					          	<td name="cate_info" title="${vo.cate_info}" style="font-weight: bold;">
-					          		<input class = "Qchoice" name="cate_name" type="checkbox" value="${vo.cate_no}">&nbsp;&nbsp;&nbsp;${vo.cate_name}
+					          	<td name="cateInfo" title="${vo.cateInfo}" style="font-weight: bold;">
+					          		<input class = "Qchoice" name="cateName" type="checkbox" value="${vo.cateNo}">&nbsp;&nbsp;&nbsp;${vo.cateName}
 					          	</td>
 					          </tr>
 					        </c:forEach>
@@ -122,14 +112,15 @@
 		         </table> 
 		        </div>
 		        
-		      </div>
+		      </div><!-- /row -->
 	          <div class = "buttonBox" style="margin-left: 40%;margin-top:5%;margin-bottom: 5%;">
 				  
-				  	<button type="button" onclick="location.href='/master/edit?${vo.cate_no}' "class="btn btn-warning">질문 편집</button>
+				  	<button type="submit" class="btn btn-warning">질문 편집</button>
 				  	<button type="button" class="btn btn-default" id="cate_del" style="margin-left: 10px;">삭제</button>
 				  
 			  </div>
-		  </div><!-- /row -->
+			 </form>
+		  </div>
 	      <footer class="footer">
 	        <p>Koscom 만족도 설문 조사</p>
 	      </footer>
@@ -145,15 +136,18 @@
 		  //삭제버튼 누를때	  	
           $("#cate_del").click(function() { 
         	    console.log("삭제모달");
-        	    var cate_no = [];
-        	    //var cate_no = $("input:checkbox[name='hidden_no']:checked").val();
-        	    /* $('input[name="hidden_no"]:checkbox:checked').each(function(){items.push($(this).val());});
-        	    var tmp = cate_no.join(','); */
-        	    $("input[name=cate_name]:checked").each(function(i, e) {
-        	    	   cate_no[i] = $(this).val();
-        	    	});
-	        	console.log(cate_no);
-        	    $("input[name=modalDel]").val(cate_no);
+        	    var cateNo = [];
+        	    $("input[name=cateName]:checked").each(function(i, e) {
+        	    	cateNo[i] = $(this).val();
+        	    });
+        	    
+        	    if(cateNo.length == 0){
+        	    	  alert("카테고리를 선택해 주세요.");
+        	    	  return;
+        	    }//체크한 값이 없으면 띄우기
+	        	
+        	    console.log(cateNo);
+        	    $("input[name=modalDel]").val(cateNo);
         	    $("#myModal").modal();
         	});
           
@@ -162,8 +156,8 @@
           	console.log("추가버튼됨");
           	
               report = {
-            	  cate_name: $("#cate_name").val(),
-            	  cate_info: $("#cate_info").val()
+            	  cateName: $("#cateName").val(),
+            	  cateInfo: $("#cateInfo").val()
               	};
               
               console.log(report);
@@ -220,8 +214,8 @@
             	  //카테고리 리스트 테이블 그리기.
             	  function renderApplied(cateList) {
             		  var str = "";
-                		  str += "<tr data-careerno='" + cateList.cate_no+ "'>";
-                      	  str += "<td name='cate_info' style='font-weight: bold;' title='" + cateList.cate_info + "'><input name='cate_name' type='checkbox'>&nbsp;&nbsp;&nbsp;" + cateList.cate_name + "<input type='hidden' name='hidden_no' id = 'cate_no' value='" +cateList.cate_no+ "'></td>";
+                		  str += "<tr data-careerno='" + cateList.cateNo+ "'>";
+                      	  str += "<td name='cateInfo' style='font-weight: bold;' title='" + cateList.cateInfo + "'><input name='cateName' type='checkbox' value='" +cateList.cateNo+ "'>&nbsp;&nbsp;&nbsp;" + cateList.cateName + "</td>";
                       $("#cateListTable").append(str);
             		  
             	  }
@@ -234,7 +228,7 @@
         	  console.log("삭제버튼 누르고 스크립트");
         	  var delCateList = [];
         	  	  //cate_no= $("input[name=modalDel]").val();
-        	    $("input[name=cate_name]:checked").each(function(i, e) {
+        	    $("input[name=cateName]:checked").each(function(i, e) {
         	    	delCateList[i] = $(this).val();
      	    	});
      	    	//cate_no = $("input[name=modalDel]").val();
@@ -246,16 +240,18 @@
                   data : {"delCateList" : delCateList},
                   dataType: "json",
                   success: function (result) {
-
-                  	if(result==1){
+					console.log(result)
+                  	if(result>=1){
                   		 $("#myModal").modal("hide")
-                          getCateList();
-                         
+                         getCateList();
                   	}
                   },
                   error: function () {
-                	 
-                  	 alert("카테고리 삭제에 실패했습니다.");
+                	  alert("카테고리 삭제에 실패했습니다.");
+                	  //$(".alert").show();
+                	  /* $(“.alert”).on(“close.bs.alert”, function() {
+                		  alert(“이벤트 실행됨”);
+                		}); */
                   }
               })
         	  

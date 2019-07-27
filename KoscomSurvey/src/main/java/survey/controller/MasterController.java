@@ -24,20 +24,6 @@ public class MasterController {
 		return "master/add";
 	}
 	
-	@RequestMapping(value="/edit", method= {RequestMethod.GET,RequestMethod.POST})
-	public String edit(@RequestParam("cate_no") int cate_no,Model model) {
-		System.out.println(cate_no);
-		model.addAttribute("cate_no", cate_no);
-		return "master/add";
-	}
-	
-	@RequestMapping(value="/cli", method= {RequestMethod.GET,RequestMethod.POST})
-	public String cliSurvey(String value1,Model model) {
-		
-		value1 = "2019 코스콤 고객만족도 조사";
-		model.addAttribute("value1", value1);
-		return "master/cliSurvey";
-	}
 	
 	@RequestMapping(value="/surveyManage", method= {RequestMethod.GET,RequestMethod.POST})
 	public String surveyManage(String cliName,Model model) {

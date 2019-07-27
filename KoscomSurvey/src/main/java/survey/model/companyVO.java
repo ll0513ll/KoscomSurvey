@@ -4,9 +4,9 @@ package survey.model;
 public class companyVO {
 
 	
-	private int company_no;
+	private int companyNo;
 	
-	private String company_name;
+	private String companyName;
 	
 	private String manager;
 	
@@ -15,46 +15,48 @@ public class companyVO {
 	
 	}
 
-	public companyVO(int company_no, String company_name, String manager) {
-		this.company_no = company_no;
-		this.company_name = company_name;
+
+	public companyVO(int companyNo, String companyName, String manager) {
+		super();
+		this.companyNo = companyNo;
+		this.companyName = companyName;
 		this.manager = manager;
 	}
 
 
-
-	public int getCompany_no() {
-		return company_no;
+	public int getCompanyNo() {
+		return companyNo;
 	}
 
-	public void setCompany_no(int company_no) {
-		this.company_no = company_no;
+
+	public void setCompanyNo(int companyNo) {
+		this.companyNo = companyNo;
 	}
 
-	public String getCompany_name() {
-		return company_name;
+
+	public String getCompanyName() {
+		return companyName;
 	}
 
-	public void setCompany_name(String company_name) {
-		this.company_name = company_name;
+
+	public void setCompanyName(String companyName) {
+		this.companyName = companyName;
 	}
+
 
 	public String getManager() {
 		return manager;
 	}
 
+
 	public void setManager(String manager) {
 		this.manager = manager;
 	}
-	
-	
 
 
 	@Override
 	public String toString() {
-		return "companyVO [company_no=" + company_no + ", company_name=" + company_name + ", manager=" + manager
-				+ "]";
+		return "companyVO [companyNo=" + companyNo + ", companyName=" + companyName + ", manager=" + manager + "]";
 	}
-
 
 }

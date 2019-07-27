@@ -2,71 +2,69 @@ package survey.model;
 
 public class quesVO {
 	
-	private int ques_no;
-	private int cate_no;
-	private int company_no;
-	private int ques_type;
-	private String ques_name;
+	private int quesNo;
+	private int cateNo;
+	private int companyNo;
+	private int type;
+	private String quesName;
 	
 	public quesVO() {
 
 	}
 
-	public quesVO(int ques_no, int cate_no, int company_no, int ques_type, String ques_name) {
-
-		this.ques_no = ques_no;
-		this.cate_no = cate_no;
-		this.company_no = company_no;
-		this.ques_type = ques_type;
-		this.ques_name = ques_name;
+	public quesVO(int quesNo, int cateNo, int companyNo, int type, String quesName) {
+		super();
+		this.quesNo = quesNo;
+		this.cateNo = cateNo;
+		this.companyNo = companyNo;
+		this.type = type;
+		this.quesName = quesName;
 	}
 
-	public int getQues_no() {
-		return ques_no;
+	public int getQuesNo() {
+		return quesNo;
 	}
 
-	public void setQues_no(int ques_no) {
-		this.ques_no = ques_no;
+	public void setQuesNo(int quesNo) {
+		this.quesNo = quesNo;
 	}
 
-	public int getCate_no() {
-		return cate_no;
+	public int getCateNo() {
+		return cateNo;
 	}
 
-	public void setCate_no(int cate_no) {
-		this.cate_no = cate_no;
+	public void setCateNo(int cateNo) {
+		this.cateNo = cateNo;
 	}
 
-	public int getCompany_no() {
-		return company_no;
+	public int getCompanyNo() {
+		return companyNo;
 	}
 
-	public void setCompany_no(int company_no) {
-		this.company_no = company_no;
+	public void setCompanyNo(int companyNo) {
+		this.companyNo = companyNo;
 	}
 
-	public int getQues_type() {
-		return ques_type;
+	public int getType() {
+		return type;
 	}
 
-	public void setQues_type(int ques_type) {
-		this.ques_type = ques_type;
+	public void setType(int type) {
+		this.type = type;
 	}
 
-	public String getQues_name() {
-		return ques_name;
+	public String getQuesName() {
+		return quesName;
 	}
 
-	public void setQues_name(String ques_name) {
-		this.ques_name = ques_name;
+	public void setQuesName(String quesName) {
+		this.quesName = quesName;
 	}
 
 	@Override
 	public String toString() {
-		return "quesVO [ques_no=" + ques_no + ", cate_no=" + cate_no + ", company_no=" + company_no + ", ques_type="
-				+ ques_type + ", ques_name=" + ques_name + "]";
+		return "quesVO [quesNo=" + quesNo + ", cateNo=" + cateNo + ", companyNo=" + companyNo + ", type=" + type
+				+ ", quesName=" + quesName + "]";
 	}
-	
-	
 
 }

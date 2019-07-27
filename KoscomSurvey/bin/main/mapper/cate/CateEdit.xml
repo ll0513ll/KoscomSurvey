@@ -7,35 +7,33 @@
  	<select id="getCateList" resultType="survey.model.cateVO">
  		<![CDATA[
         	SELECT 
-        		cate_no,
-        		cate_name,
-        		cate_info 
+        		cateNo,
+        		cateName,
+        		cateInfo 
         	FROM 
         		cate 
-        	ORDER BY cate_no DESC 
+        	ORDER BY cateNo DESC 
         ]]>
     </select>
  
     <insert id="addCate" parameterType="survey.model.cateVO">
     	<![CDATA[
         	INSERT INTO 
-        		CATE(CATE_NO,CATE_NAME,CATE_INFO) 
+        		cate(cateNo,cateName,cateInfo) 
         	VALUES
-        		(#{cate_no},#{cate_name},#{cate_info})
+        		(#{cateNo},#{cateName},#{cateInfo})
         ]]>
     </insert>
     
-    <delete id="delCate" parameterType="java.util.List" >
-    	<![CDATA[
-	    	DELETE CATE 
-	    	WHERE cate_no in
-	     ]]>
-	    	<foreach item="cateNo" collection="delCateList" index="index" open="(" separator="," close=")">
-		    	<![CDATA[	
-		    		
-    			#{cateNo}
-		    			
-		    	]]>
+    <delete id="delCate" parameterType="java.util.ArrayList" >
+	    <![CDATA[
+	    	DELETE FROM cate  
+	    	WHERE cateNo in
+	    ]]>
+	    	<foreach item="cateList" collection="list" index="index" open="(" separator="," close=")">
+		    	<![CDATA[		
+    			#{cateList}
+		    	]]>		
 	        </foreach>
     </delete>
 
