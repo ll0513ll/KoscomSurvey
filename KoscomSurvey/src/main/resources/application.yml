@@ -2,7 +2,7 @@ mybatis:
   configuration:
     map-underscore-to-camel-case: true
    
-debug: false
+debug: true
 spring:
   thymeleaf:
     enabled: false

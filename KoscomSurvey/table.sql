@@ -18,7 +18,14 @@ CREATE TABLE `survey` (
   CONSTRAINT `survey_ibfk_3` FOREIGN KEY (`companyNo`) REFERENCES `company` (`companyNo`)
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8
 
-
+CREATE TABLE `surveyForm` (
+                          `surveyFormNo` int(11) NOT NULL AUTO_INCREMENT,
+                          `cateName` varchar(100) NOT NULL,
+                          `quesName` varchar(100) DEFAULT NULL,
+                          `type` int(10) DEFAULT NULL,
+                          `regDate` date DEFAULT NULL,
+                          PRIMARY KEY (`surveyFormNo`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 
 CREATE TABLE `cate` (
   `cateNo` int(11) NOT NULL AUTO_INCREMENT,
